@@ -2,9 +2,7 @@
 using namespace std;
 
 int main() {
-    // This statement prints "Hello my friend"
-    cout << "Hello World now";
+    cout << "CNED-Gestion de logs";
 
     return 0;
 }
-    
