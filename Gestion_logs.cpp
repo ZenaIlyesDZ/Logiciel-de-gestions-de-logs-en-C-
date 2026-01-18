@@ -7,10 +7,8 @@
  * This app allows you to manage logs efficiently, to store, retrieve, and analyze log data.
  */
 #include <iostream>
-using namespace std;
 
 int main() {
-    cout << "CNED-Gestion de logs";
-
+    std::cout << "CNED-Gestion de logs" << std::endl;
     return 0;
 }
