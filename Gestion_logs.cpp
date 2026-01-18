@@ -10,5 +10,10 @@
 
 int main() {
     std::cout << "CNED-Gestion de logs" << std::endl;
+    std::cout << "Menu" << std::endl;
+    std::cout << " Choisir une option" << std::endl;
+    std::cout << "1 - Afficher log sudo" << std::endl;
+    std::cout << "2 - Afficher et enregistrer log ssh" << std::endl;
+    std::cout << "0 - Sortir du programme" << std::endl;
     return 0;
 }
