@@ -24,5 +24,13 @@ int main() {
     else { // Affiche le choix de l'utilisateur si la saisie est correcte
         std::cout << "Vous avez choisi l'option : " << nombreEntré << std::endl; 
     }
-    return 0;
+    if (nombreEntré == 1) {
+        std::cout << "Affichage des logs sudo" << std::endl;
+    }
+    else if (nombreEntré == 2){
+        std::cout << "Affichage et enregistrement des logs ssh" << std::endl;
+    }
+    else if (nombreEntré == 0 || nombreEntré >= 3) {
+        std::cout << "Sortie du programme" << std::endl;
+    }
     }
