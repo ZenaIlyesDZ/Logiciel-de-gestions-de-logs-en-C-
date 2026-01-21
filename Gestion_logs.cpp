@@ -4,12 +4,12 @@
  * @author : Ilyes
  * @date : 17/01/2026
  * @details :
- * This app allows you to manage logs efficiently, to store, retrieve, and analyze log data.
+ * Ce logiciel permet de gestionner des logs, les trier, les visualiser et les enregistrer.
  */
 #include <iostream>
 
 int main() {
-    int nombreEntré; // Variable pour stocker le choix de l'utilisateur
+    int nombreEntré;    // Variable pour stocker le choix de l'utilisateur
     do
     {
     std::cout << "CNED-Gestion de logs" << std::endl;
@@ -18,10 +18,11 @@ int main() {
     std::cout << "1 - Afficher log sudo" << std::endl;
     std::cout << "2 - Afficher et enregistrer log ssh" << std::endl;
     std::cout << "0 - Sortir du programme" << std::endl;
+    
     if (!(std::cin >> nombreEntré)) { // On vérifie si l'entrée est un entier et non une lettre ou autre caractère
         std::cout << "Entrée non valide. Veuillez entrer un chiffre." << std::endl; }
     
-    else {
+    else { // Si l'entrée est un entier, on traite le choix de l'utilisateur
         std::cout << "Vous avez choisi l'option : " << nombreEntré << std::endl; 
         switch(nombreEntré){
         case 1:
@@ -38,7 +39,7 @@ int main() {
         break;   
             }    
         }  
-    } while (nombreEntré != 0);
+    } while (nombreEntré != 0); // On affiche le menu jusqu'à ce que l'utilisateur choisisse de sortir en appuyant sur 0
     
     return 0;
 }
