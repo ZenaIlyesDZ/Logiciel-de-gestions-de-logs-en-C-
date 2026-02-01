@@ -8,39 +8,50 @@
  */
 #include <iostream>
 
-int main() {
-    int nombreEntré;    // Variable pour stocker le choix de l'utilisateur
-    do
-    {
+void afficherMenu() {
     std::cout << "CNED-Gestion de logs" << std::endl;
     std::cout << "Menu" << std::endl;
     std::cout << " Choisir une option" << std::endl;
     std::cout << "1 - Afficher log sudo" << std::endl;
     std::cout << "2 - Afficher et enregistrer log ssh" << std::endl;
     std::cout << "0 - Sortir du programme" << std::endl;
+}
+
+int nombreEntré;    // Variable pour stocker le choix de l'utilisateur
+
+int choixLog(int nombreEntré) {
+    std::cout << "Vous avez choisi l'option : " << nombreEntré << std::endl; 
+        switch(nombreEntré){
+        case 1:
+            std::cout << "Affichage des logs sudo" << '\n' << std::endl;
+            break;
+        case 2:
+            std::cout << "Affichage et enregistrement des logs ssh" << '\n' << std::endl;
+            break;
+        case 0:
+            std::cout << "Sortie du programme..." << '\n'<< std::endl;
+            break;
+        default:
+            std::cout << "Option non valide. Veuillez réessayer avec une option existante" << '\n' << std::endl;
+            break;   
+    }  
+    return nombreEntré;
+}
+
+
+int main() {
+    do
+    {
+        afficherMenu(); // On apelle la fonction afin d'afficher le menu
+        std::cout << "Entrez votre choix : ";
     
     if (!(std::cin >> nombreEntré)) { // On vérifie si l'entrée est un entier et non une lettre ou autre caractère
         std::cout << "Entrée non valide. Veuillez entrer un chiffre." << std::endl; }
     
     else { // Si l'entrée est un entier, on traite le choix de l'utilisateur
-        std::cout << "Vous avez choisi l'option : " << nombreEntré << std::endl; 
-        switch(nombreEntré){
-        case 1:
-            std::cout << "Affichage des logs sudo" << std::endl;
-        break;
-        case 2:
-            std::cout << "Affichage et enregistrement des logs ssh" << std::endl;
-        break;
-        case 0:
-            std::cout << "Sortie du programme..." << std::endl;
-        break;
-        default:
-            std::cout << "Option non valide. Veuillez réessayer avec une option existante" << std::endl;
-        break;   
-            }    
-        }  
+        choixLog(nombreEntré);
+    }
     } while (nombreEntré != 0); // On affiche le menu jusqu'à ce que l'utilisateur choisisse de sortir en appuyant sur 0
     
     return 0;
 }
-
