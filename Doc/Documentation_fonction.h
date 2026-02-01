@@ -17,3 +17,25 @@
  * @details
  * Cette fonction affiche un menu permettant à l'utilisateur de choisir entre différentes options de gestion des logs, c'est cette fonction qui est le coeur du programme.
  */
+
+ /** @brief Documentation de la fonction afficherMenu */
+ /**
+ * @fn void afficherMenu();
+ * @brief Affiche le menu principal du programme de gestion des logs.
+ * @author Ilyes
+ * @date 1 Février 2026
+ * @details
+ * Cette fonction affiche un menu avec les différentes options disponibles pour la gestion des logs.
+ */
+
+/** @brief Documentation de la fonction choixLog */
+ /**
+ * @fn int choixLog(int nombreEntré);
+ * @brief Traite le choix de l'utilisateur dans le menu principal du programme de gestion des logs.
+ * @author Ilyes
+ * @date 1 Février 2026
+ * @param nombreEntré Le choix de l'utilisateur (1, 2 ou 0).
+ * @return int Retourne le nombre entré par l'utilisateur.
+ * @details
+ * Cette fonction permet à l'utilisateur de choisir une option et affiche les messages correspondants à chaque option du menu.
+ */
