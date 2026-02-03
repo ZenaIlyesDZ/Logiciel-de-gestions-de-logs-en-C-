@@ -7,37 +7,9 @@
  * Ce logiciel permet de gestionner des logs, les trier, les visualiser et les enregistrer.
  */
 #include <iostream>
-
-void afficherMenu() {
-    std::cout << "CNED-Gestion de logs" << std::endl;
-    std::cout << "Menu" << std::endl;
-    std::cout << " Choisir une option" << std::endl;
-    std::cout << "1 - Afficher log sudo" << std::endl;
-    std::cout << "2 - Afficher et enregistrer log ssh" << std::endl;
-    std::cout << "0 - Sortir du programme" << std::endl;
-}
+#include "Menu/Menu.h"
 
 int nombreEntré;    // Variable pour stocker le choix de l'utilisateur
-
-int choixLog(int nombreEntré) {
-    std::cout << "Vous avez choisi l'option : " << nombreEntré << std::endl; 
-        switch(nombreEntré){
-        case 1:
-            std::cout << "Affichage des logs sudo" << '\n' << std::endl;
-            break;
-        case 2:
-            std::cout << "Affichage et enregistrement des logs ssh" << '\n' << std::endl;
-            break;
-        case 0:
-            std::cout << "Sortie du programme..." << '\n'<< std::endl;
-            break;
-        default:
-            std::cout << "Option non valide. Veuillez réessayer avec une option existante" << '\n' << std::endl;
-            break;   
-    }  
-    return nombreEntré;
-}
-
 
 int main() {
     do
