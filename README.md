@@ -18,6 +18,9 @@ Logs management app in C++/
 ├── Doc
 │   ├── Documentation_fonction.h
 │   └── Doxyfile
+|── Logs
+│   |── log.cpp
+|   └── log.h
 ├── Menu
 │   |── Menu.cpp
 |   └── Menu.h
