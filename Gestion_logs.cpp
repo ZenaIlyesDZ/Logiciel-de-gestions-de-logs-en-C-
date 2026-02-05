@@ -6,10 +6,13 @@
  * @details :
  * Ce logiciel permet de gestionner des logs, les trier, les visualiser et les enregistrer.
  */
+
 #include <iostream>
+#include <fstream>
+#include <string>
 #include "Menu/Menu.h"
 
-int nombreEntré;    // Variable pour stocker le choix de l'utilisateur
+int nombreEntré; // Déclaration de la variable globale pour stocker le choix de l'utilisateur
 
 int main() {
     do
@@ -24,6 +27,6 @@ int main() {
         choixLog(nombreEntré);
     }
     } while (nombreEntré != 0); // On affiche le menu jusqu'à ce que l'utilisateur choisisse de sortir en appuyant sur 0
-    
+
     return 0;
 }
