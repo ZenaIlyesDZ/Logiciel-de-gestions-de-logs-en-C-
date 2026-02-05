@@ -9,6 +9,14 @@ This project aim to :
 - Record certain SSH-related events into a structured log file
 - Provide a simple and intuitive menu-based interface
 ## Functional Requirements
+### Logs monitor
+We want to monitor this type of log : 
+- sudo demand
+- disconnection on the local station;
+- critical system event
+### Logs to save
+We want certains logs to be save on the workstation
+
 
 ## Menu Interface
 
