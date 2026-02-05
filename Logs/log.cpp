@@ -16,7 +16,7 @@ Ce fichier contient les fonctions pour afficher les logs, comme les logs sudo, l
 
 int sudoLog() { // Variable pour stocker le choix de l'utilisateur pour les logs sudo
     if (nombreEntré == 1) { // Si l'utilisateur choisit 1, on affiche les logs sudo
-    std::ifstream file("/var/log/auth.log"); // Ouvre le fichier de tests
+    std::ifstream file("/var/log/auth.log"); // Ouvre le fichier auth.log
     std::string line; // Variable pour stocker chaque ligne lue du fichier
     
     if (file.is_open()) { // Vérifie si le fichier est ouvert correctement
