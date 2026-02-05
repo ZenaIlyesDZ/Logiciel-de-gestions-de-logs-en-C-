@@ -7,7 +7,9 @@
  * Ce fichier contient les fonctions utilisées pour afficher le menu principal du programme de gestion des logs et pour traiter les choix de l'utilisateur.
  */
 
- #include <iostream>
+#include <iostream>
+#include "Menu.h"
+#include "../Logs/log.h"
 
 void afficherMenu() {
     std::cout << "CNED-Gestion de logs" << std::endl;
@@ -23,6 +25,7 @@ int choixLog(int nombreEntré) {
         switch(nombreEntré){
         case 1:
             std::cout << "Affichage des logs sudo" << '\n' << std::endl;
+            sudoLog(); // Appelle la fonction pour afficher les logs sudo
             break;
         case 2:
             std::cout << "Affichage et enregistrement des logs ssh" << '\n' << std::endl;
