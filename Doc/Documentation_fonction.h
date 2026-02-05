@@ -3,7 +3,7 @@
  * @brief summary of the role : Fichier avec documentation du projet de gestionnaire de logs en C++
  * @author : Ilyes
  * @details :
- * Ce fichier contient la documentation des outils principaux du projet de gestionnaire de logs en C++
+ * Ce fichier contient la documentation des fonctions du projet de gestionnaire de logs en C++
  */
 
 
@@ -40,10 +40,24 @@
  * @brief Traite le choix de l'utilisateur dans le menu principal du programme de gestion des logs.
  * @author Ilyes
  * @date 1 Février 2026
- * @param nombreEntré Le choix de l'utilisateur (1, 2 ou 0).
+ * @param int nombreEntré Le choix de l'utilisateur (1, 2 ou 0).
  * @return int Retourne le nombre entré par l'utilisateur.
  * @details
  * Cette fonction permet à l'utilisateur de choisir une option et affiche les messages correspondants à chaque option du menu.
  */
 
  int choixLog(int nombreEntré);
+
+
+/** @brief Documentation de la fonction sudoLog */
+    /**
+    * @fn int sudoLog();
+    * @brief Affiche les logs sudo du système.
+    * @author Ilyes
+    * @date 5 Février 2026
+    * @return int Retourne 0 si les logs ont été affichés correctement.
+    * @details
+    * Cette fonction lit le fichier /var/log/auth.log et affiche les lignes contenant "sudo" à l'utilisateur.
+    */
+    
+    int sudoLog();
