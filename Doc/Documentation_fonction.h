@@ -1,6 +1,6 @@
 /*
  * @file : Documentation_fonction.h
- * @brief summary of the role : Fichier avec documentation du projet de gestionnaire de logs en C++
+ * @brief summary of the role : Fichier avec documentation des fonctions
  * @author : Ilyes
  * @details :
  * Ce fichier contient la documentation des fonctions du projet de gestionnaire de logs en C++
@@ -61,3 +61,16 @@
     */
     
     int sudoLog();
+
+/** @brief Documentation de la fonction sshLog */
+    /**
+    * @fn int sshLog();
+    * @brief Gère les logs SSH du système.
+    * @author Ilyes
+    * @date 6 Février 2026
+    * @return int Retourne 0 si les logs ont été affichés correctement.
+    * @details
+    * Filtre les entrées de log correspondant à des connexions ssh et affiche les demandes de connexion au 
+      format de la structure SshLogging
+    */
+    int sshLog();
