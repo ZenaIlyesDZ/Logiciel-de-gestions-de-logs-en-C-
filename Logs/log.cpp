@@ -35,7 +35,7 @@ int sudoLog() { // Filtre les entrées de log contenant des requêtes sudo depui
 
 int sshLog() { // Structure pour stocker les éléments concernant les log de connexion SSH
     if (nombreEntré == 2) { // Si l'utilisateur choisit 2, on affiche les logs ssh
-    std::ifstream file("/var/log/syslog"); // Ouvre le fichier profile
+    std::ifstream file("/var/log/syslog"); // Ouvre le fichier syslog
     std::string line; // Variable pour stocker chaque ligne lue du fichier
     
     if (file.is_open()) { // Vérifie si le fichier est ouvert correctement
