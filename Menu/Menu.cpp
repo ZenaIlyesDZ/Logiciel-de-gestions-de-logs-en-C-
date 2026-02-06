@@ -29,6 +29,7 @@ int choixLog(int nombreEntré) {
             break;
         case 2:
             std::cout << "Affichage et enregistrement des logs ssh" << '\n' << std::endl;
+            sshLog(); // Appelle la fonction pour afficher les logs ssh
             break;
         case 0:
             std::cout << "Sortie du programme..." << '\n'<< std::endl;
