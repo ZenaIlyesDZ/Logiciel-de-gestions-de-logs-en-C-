@@ -8,3 +8,4 @@ Ce fichier contient les déclarations des fonctions pour afficher les logs, comm
 */
 
 int sudoLog();
+int sshLog();
