@@ -9,4 +9,5 @@ Ce fichier contient les déclarations des fonctions pour afficher les logs, comm
 
 int sudoLog();
 int sshLog();
-void hostName();
+void hostName(SSHLogging &sshLog);
+void userName(SSHLogging &sshLog);
