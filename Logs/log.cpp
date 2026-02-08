@@ -38,6 +38,13 @@ void hostName(SSHLogging &sshLog) { // Affiche le nom de l'hôte de la machine
     sshLog.hostname = hostname; // Stocke le nom de l'hôte dans la structure
  }
 
+void userName(SSHLogging &sshLog) { // Affiche le nom de l'utilisateur de la machine
+    char username[1024]; // Buffer pour stocker le nom de l'utilisateur
+    getlogin_r(username, 1024); // Récupère le nom de l'utilisateur
+    sshLog.username = username; // Stocke le nom de l'utilisateur dans la structure
+}
+
+
 int sudoLog() { // Filtre les entrées de log contenant des requêtes sudo depuis le fichier /var/log/auth.log
     if (nombreEntré == 1) { // Si l'utilisateur choisit 1, on affiche les logs sudo
     std::ifstream file("/var/log/auth.log"); // Ouvre le fichier auth.log
@@ -66,7 +73,10 @@ int sshLog() { // Structure pour stocker les éléments concernant les log de co
     if (nombreEntré == 2) { // Si l'utilisateur choisit 2, on affiche les logs ssh
         std::ifstream file("/var/log/syslog"); // Ouvre le fichier syslog
         
-        if (file.is_open()) { // Vérifie si le fichier est ouvert correctement
+        if (file.is_open()) { // Vérifie si le fichier est ouvert correctement 
+            hostName(sshLog);
+            userName(sshLog);
+            
             while (std::getline(file, line)) { // Lit chaque ligne du fichier
                 if (line.find("ssh") != std::string::npos) { // Si la ligne contient "ssh", on l'affiche
                     
@@ -77,15 +87,14 @@ int sshLog() { // Structure pour stocker les éléments concernant les log de co
                     sshDateTime.minute = line.substr(14, 2); // Extrait les minutes de la ligne
                     sshDateTime.second = line.substr(17, 2); // Extrait les secondes de la ligne
                     
-                    hostName(sshLog); // Appelle la fonction pour afficher le nom de l'hôte
-                    
                     std::cout << "Une connexion SSH a été faite le  : " 
                     << sshDateTime.day << " à " 
                     << sshDateTime.hour << " Heure, " 
                     << sshDateTime.minute << " min et " 
                     << sshDateTime.second << " secondes" 
                     << " par la machine " 
-                    << sshLog.hostname << std::endl; 
+                    << sshLog.hostname << 
+                    " et l'utilisateur " << sshLog.username << std::endl;
                 } 
             }
             file.close();
