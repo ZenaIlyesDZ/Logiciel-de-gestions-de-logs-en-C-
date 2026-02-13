@@ -101,18 +101,42 @@ int sshLog() { // Structure pour stocker les éléments concernant les log de co
                               << " à " << sshDateTime.hour << "h "
                               << sshDateTime.minute << "m "
                               << sshDateTime.second << "s\n";
-                    
                     std::cout << "Machine locale : " << sshLog.hostname << "\n";
                     std::cout << "Utilisateur local : " << sshLog.username << "\n";
-
                     std::cout << "Utilisateur SSH : " << sshLog.sshUser << "\n";
                     std::cout << "Serveur SSH : " << sshLog.sshHost << "\n";
                     std::cout << "Port SSH : " << sshLog.sshPort << "\n";
                     std::cout << "===============================\n";
+
+                    sshLog.Date = sshDateTime;
+                    enregistrerSSHLog(sshLog);
                 } 
             
             file.close();
             }
 
     return 0;
+}
+
+int enregistrerSSHLog(SSHLogging sshlog) {
+    std::ofstream outFile("/home/vboxuser/CNED/logiciel_gestions_logs/Logs/ssh_logs.txt", std::ios::app); // Ouvre le fichier en mode ajout pour ne pas écraser les logs précédents
+    if (!outFile) {
+        std::cerr << "Erreur lors de l'ouverture du fichier pour l'enregistrement." << std::endl;
+        return -1;
+    }
+
+    // Écrit les informations de connexion SSH dans le fichier
+    outFile << "Date : " << sshlog.Date.day 
+            << " à " << sshlog.Date.hour << "h "
+            << sshlog.Date.minute << "m "
+            << sshlog.Date.second << "s\n";
+    outFile << "Machine locale : " << sshlog.hostname << "\n";
+    outFile << "Utilisateur local : " << sshlog.username << "\n";
+    outFile << "Utilisateur SSH : " << sshlog.sshUser << "\n";
+    outFile << "Serveur SSH : " << sshlog.sshHost << "\n";
+    outFile << "Port SSH : " << sshlog.sshPort << "\n";
+    outFile << "===============================\n";
+
+    outFile.close(); // Ferme le fichier
+    return 1;
 }
