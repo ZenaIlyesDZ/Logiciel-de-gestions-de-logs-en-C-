@@ -5,6 +5,7 @@
  * @details :
  * Ce fichier contient la documentation des fonctions du projet de gestionnaire de logs en C++
  */
+#include "../Logs/log.h"
 
 
  /** @brief Documentation de la fonction main() */
@@ -74,3 +75,16 @@
       format de la structure SshLogging
     */
     int sshLog();
+  
+/** @brief Documentation de la fonction enregistrerSSHLog */
+    /**
+    * @fn int enregistrerSSHLog(SSHLogging sshlog);
+    * @brief Enregistre les logs SSH dans un fichier.
+    * @author Ilyes
+    * @date 10 Février 2026
+    * @param SSHLogging sshlog La structure contenant les informations de connexion SSH à enregistrer.
+    * @return int Retourne 1 si les logs ont été enregistrés correctement, -1 en cas d'erreur.
+    * @details
+    * Cette fonction ouvre le fichier /home/vboxuser/CNED/logiciel_gestions_logs/Logs/ssh_logs.txt en mode ajout et écrit les informations de connexion SSH dans ce fichier.
+    */
+    int enregistrerSSHLog(SSHLogging sshlog);
